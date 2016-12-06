@@ -19,9 +19,160 @@
 		<link rel="stylesheet" type="text/css" href="static/css/loaders.min.css" />
 		<link rel="stylesheet" type="text/css" href="//at.alicdn.com/t/font_f4a7ikjnfkh2gldi.css" />
 		<link rel="stylesheet" type="text/css" href="static/layer/skin/layer.css" />
+		<style type="text/css">
+			.login-container {
+				width: 100%;
+				height: 100%;
+				margin-top: 150px;
+				background: url(static/images/login-bg.jpg);
+				position: relative
+			}
+			
+			.login-container .login-box {
+				width: 326px;
+				margin: 0 auto
+			}
+			
+			.login-container .login-box .logo-img {
+				width: 159px;
+				margin: 0 auto
+			}
+			
+			.login-container .login-box .am-form {
+				margin-top: 68px
+			}
+			
+			.login-container .login-box .am-form .am-form-group {
+				overflow: auto;
+				border-bottom: 2px #68c6de solid;
+				margin-bottom: 30px
+			}
+			
+			.login-container .login-box .am-form .am-form-group label {
+				float: left
+			}
+			
+			.login-container .login-box .am-form .am-form-group label i {
+				font-size: 24px;
+				color: #68c6de
+			}
+			
+			.login-container .login-box .am-form .am-form-group input {
+				width: 265px;
+				float: left;
+				margin-left: 10px;
+				border: 0;
+				background: 0 0
+			}
+			
+			.login-container .login-box .am-form .am-btn-secondary {
+				width: 164px;
+				height: 50px;
+				background: #68c6de;
+				border-color: #68c6de;
+				border-radius: 27px;
+				display: block;
+				margin: 50px auto 0
+			}
+			
+			@media screen and (max-width:640px) {
+				.login-container {
+					padding: 0 15px;
+					margin-top: 80px
+				}
+				.login-container .login-box {
+					width: 100%
+				}
+				.login-container .login-box .am-form {
+					margin-top: 50px
+				}
+				.login-container .login-box .am-form .am-form-group input {
+					width: 88%
+				}
+			}
+			
+			.register-container {
+				width: 100%;
+				height: 100%;
+				background: url(static/images/login-bg.jpg)
+			}
+			
+			.register-container .register-box {
+				width: 442px;
+				height: auto;
+				margin: 122px auto 0
+			}
+			
+			.register-container .register-box .am-form legend {
+				border-bottom: 0
+			}
+			
+			.register-container .register-box .am-form .register-info {
+				font-size: 14px;
+				color: #9b9b9b;
+				margin-top: 22px
+			}
+			
+			.register-container .register-box .am-form .am-form-group {
+				overflow: auto
+			}
+			
+			.register-container .register-box .am-form .am-form-group label {
+				font-size: 16px;
+				color: #9b9b9b;
+				line-height: 40px
+			}
+			
+			.register-container .register-box .am-form .am-btn-secondary {
+				width: 164px;
+				height: 50px;
+				border-radius: 27px;
+				background-color: #68c6de;
+				border-color: #68c6de;
+				margin-left: 81px;
+				margin-top: 30px
+			}
+			
+			@media screen and (max-width:640px) {
+				.register-container .register-box {
+					padding: 0 15px;
+					width: 100%!important;
+					margin-top: 50px
+				}
+				.register-container .register-box .am-u-md-2 {
+					text-align: left!important
+				}
+				.register-container .register-box .am-u-md-10 {
+					padding: 0!important;
+					text-align: left
+				}
+				.register-container .register-box .am-btn-secondary {
+					margin: 0 auto
+				}
+			}
+
+		</style>
 	</head>
 
-	<body>
+	<body class="login-container">
+
+		<div class="login-box">
+			<div class="logo-img">
+				<img src="http://tpl.amazeui.org/template/22/companyWebsite/dist/assets/images/logo2_03.png" alt="" />
+			</div>
+			<form action="" class="am-form" data-am-validator>
+				<div class="am-form-group">
+					<label for="doc-vld-name-2"><i class="am-icon-user"></i></label>
+					<input type="text" id="doc-vld-name-2" minlength="3" placeholder="输入用户名（至少 3 个字符）" required/>
+				</div>
+
+				<div class="am-form-group">
+					<label for="doc-vld-email-2"><i class="am-icon-key"></i></label>
+					<input type="email" id="doc-vld-email-2" placeholder="输入邮箱" required/>
+				</div>
+				<button class="am-btn am-btn-secondary" type="submit">登录</button>
+			</form>
+		</div>
 
 		<script src="static/js/fastclick.min.js"></script>
 		<script src="static/js/jquery.min.js"></script>
