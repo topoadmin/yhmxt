@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans" class="js cssanimations">
+
+	<head>
+		<meta charset="utf-8" />
+		<title>服务消费</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="renderer" content="webkit">
+		<!-- 设置缩放 -->
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimal-ui" />
+		<!-- IOS中禁用将数字识别为电话号码/忽略Android平台中对邮箱地址的识别 -->
+		<meta name="format-detection" content="telephone=no, email=no" />
+		<meta name="robots" content="index,follow" />
+		<link rel="icon" href="./static/favicon.ico" type="image/x-icon">
+		<link rel="stylesheet" type="text/css" href="static/css/amazeui.css" />
+		<link rel="stylesheet" type="text/css" href="static/layer/skin/layer.css" />
+		<style type="text/css">
+			body {
+				position: static;
+				background: url(static/images/login-bg.jpg);
+			}
+			
+			.consume {
+				position: absolute;
+				top: 0;
+				bottom: 0;
+				left: 50%;
+				top: 50%;
+				width: 100%;
+				max-width: 500px;
+				height: 230px;
+				overflow-x: hidden;
+				transform: translate(-50%, -50%);
+			}
+			
+			.consume h2 {
+				font-weight: bold;
+			}
+		</style>
+	</head>
+
+	<body>
+
+		<div class="consume">
+			<h2 class="am-text-center">激活码验证系统</h2>
+			<form class="am-form am-form-horizontal" id="consume-form" autocomplete="off" onsubmit="return false;">
+				<div class="am-form-group">
+					<label class="am-u-sm-3 am-form-label">服务名称</label>
+					<div class="am-u-sm-9">
+						<input type="text" name="service" required placeholder="消费服务" maxlength="18">
+					</div>
+				</div>
+
+				<div class="am-form-group">
+					<label class="am-u-sm-3 am-form-label">激活码</label>
+					<div class="am-u-sm-9">
+						<input id="cdkey" type="tel" name="cdkey" placeholder="输入激活码" required minlength="6" maxlength="6">
+					</div>
+				</div>
+
+				<div class="am-form-group">
+					<div class="am-u-sm-9 am-u-sm-offset-3">
+						<button type="submit" class="am-btn am-btn-success">消费</button>
+					</div>
+				</div>
+			</form>
+		</div>
+
+		<script src="static/js/fastclick.min.js"></script>
+		<script src="static/js/jquery.min.js"></script>
+		<script src="static/js/amazeui.min.js"></script>
+		<script src="static/layer/layer.js"></script>
+		<script type="text/javascript">
+			$(function() {
+				FastClick.attach(document.body)
+				var $form = $('#consume-form');
+				$form.validator({
+					submit: function(e, validity) {
+						var formValidity = this.isFormValid();
+						if(formValidity) {
+							consumeCdkey()
+						}
+					}
+				});
+			})
+
+			function consumeCdkey() {
+				var random = false;
+				if(random) {
+					layer.alert('消费成功', {
+						title: '系统提示',
+						icon: 1,
+						end: function() {
+							window.location.reload()
+						}
+					});
+				} else {
+					layer.alert('未找到的激活码', {
+						title: '系统提示',
+						icon: 2,
+						btn: ['重新输入'],
+						end: function() {
+							$("#cdkey").trigger('focus');
+						}
+					});
+				}
+			}
+		</script>
+	</body>
+
+</html>
