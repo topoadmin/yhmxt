@@ -3,9 +3,7 @@
 
 	<head>
 		<meta charset="utf-8" />
-		<title>短信激活码管理系统</title>
-		<meta id="meta-keywords" name="keywords" content="短信激活码,激活码,激活码系统">
-		<meta id="meta-description" name="description" content="短信激活码管理系统">
+		<title>控制中心</title>
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="renderer" content="webkit">
 		<!-- 设置缩放 -->
@@ -13,14 +11,14 @@
 		<!-- IOS中禁用将数字识别为电话号码/忽略Android平台中对邮箱地址的识别 -->
 		<meta name="format-detection" content="telephone=no, email=no" />
 		<meta name="robots" content="index,follow" />
-		<link rel="icon" href="./static/favicon.ico" type="image/x-icon">
+		
 		<link rel="stylesheet" type="text/css" href="static/css/animate.css" />
 		<link rel="stylesheet" type="text/css" href="static/css/amazeui.css" />
 		<link rel="stylesheet" type="text/css" href="static/css/hover.css" />
 		<link rel="stylesheet" type="text/css" href="static/css/hamburgers.css" />
 		<link rel="stylesheet" type="text/css" href="static/css/loaders.min.css" />
-		<link rel="stylesheet" type="text/css" href="static/layer/skin/layer.css" />
-		<link rel="stylesheet" type="text/css" href="static/fonts/iconfont.css" />
+		<link rel="stylesheet" type="text/css" href="//at.alicdn.com/t/font_f4a7ikjnfkh2gldi.css" />
+		<link rel="stylesheet" type="text/css" href="static/layer/skin/layer.css"/>
 	</head>
 
 	<body>
@@ -36,31 +34,10 @@
 		<div id="app">
 		</div>
 
-		<script src="static/js/mock-min.js"></script>
-		<script src="static/js/mock-data.js"></script>
 		<script src="static/js/fastclick.min.js"></script>
 		<script src="static/js/jquery.min.js"></script>
 		<script src="static/js/amazeui.min.js"></script>
 		<script src="static/layer/layer.js"></script>
-		<script type="text/javascript">
-			function updateMetaData(){
-				$.ajax({
-					url: "config"
-				}).done(function(data) {
-					if(typeof data == 'string'){
-						data = JSON.parse(data)
-					}
-					try{
-						document.title = data.WEB_TITLE;
-						document.querySelector('#meta-keywords').setAttribute('content', data.WEB_KEYWORDS)
-						document.querySelector('#meta-keywords').setAttribute('content', data.WEB_DESCRIPTION)
-					}catch(e){
-						console.error('未找到 meta 节点')
-					}
-				})
-			}
-			updateMetaData();
-		</script>
 		<!-- built files will be auto injected -->
 	</body>
 
